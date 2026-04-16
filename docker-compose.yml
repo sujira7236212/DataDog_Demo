@@ -16,7 +16,7 @@ services:
     image: registry.datadoghq.com/agent:7
     container_name: dd-agent
     environment:
-      - DD_API_KEY=1d102b0dfc1251c793afc9c8add0eb23
+      - DD_API_KEY=a0dbdc5b47f118907d59ddb637a2da3d
       - DD_SITE=us5.datadoghq.com
       - DD_APM_ENABLED=true
       - DD_LOGS_ENABLED=true

@@ -1,0 +1,27 @@
+services:
+  # ส่วนของแอปพลิเคชันที่เราเขียน
+  web-app:
+    build: .
+    container_name: demo-app
+    ports:
+      - "8080:8080"
+    environment:
+      - DD_SERVICE=demo-service
+      - DD_ENV=dev
+      - DD_VERSION=1.0.0
+      - DD_AGENT_HOST=datadog-agent
+
+  # ส่วนของ Datadog Agent (แก้ชื่อ Image แล้ว)
+  datadog-agent:
+    image: registry.datadoghq.com/agent:7
+    container_name: dd-agent
+    environment:
+      - DD_API_KEY=1d102b0dfc1251c793afc9c8add0eb23
+      - DD_SITE=us5.datadoghq.com
+      - DD_APM_ENABLED=true
+      - DD_LOGS_ENABLED=true
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro

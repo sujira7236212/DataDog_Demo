@@ -54,7 +54,7 @@ HTML_PAGE = """
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <button onclick="hitApi('/api/normal', this)" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-4 rounded shadow-lg transition duration-200">
-                1. Normal Traffic
+                1. Normal
             </button>
             
             <button onclick="hitApi('/api/slow', this)" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-4 px-4 rounded shadow-lg transition duration-200">

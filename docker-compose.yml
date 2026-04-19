@@ -11,12 +11,12 @@ services:
       - DD_VERSION=1.0.0
       - DD_AGENT_HOST=datadog-agent
 
-  # ส่วนของ Datadog Agent (แก้ชื่อ Image แล้ว)
+  # ส่วนของ Datadog Agent 
   datadog-agent:
     image: registry.datadoghq.com/agent:7
     container_name: dd-agent
     environment:
-      - DD_API_KEY=a0dbdc5b47f118907d59ddb637a2da3d
+      - DD_API_KEY=724e027de30bd435b2dbb2886ac954a1
       - DD_SITE=us5.datadoghq.com
       - DD_APM_ENABLED=true
       - DD_LOGS_ENABLED=true
